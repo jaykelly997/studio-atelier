@@ -7,10 +7,12 @@ body {
     background: #FFF;
 }
 .top {
-    background-color: #FFF;
+    background-color: #ffffffc3;
     width: 100%;
     padding: 20px 0px;
     box-shadow: 1px 1px 10px #000;
+    position: fixed;
+    z-index: 1;
 }
 .container {
     margin: 0px 80px;
@@ -68,6 +70,9 @@ body {
 .top .element .but i:hover{
     background-color: #888888a4;
 }
+.top .element .but #toggle{
+    display: none;
+}
 .bg {
     width: 100%;
     height: 100vh;
@@ -75,7 +80,7 @@ body {
     background-size: cover;
     position: relative;
 }
-.overlay {
+.bg .overlay {
     width: 100%;
     height: 100%;
     background-color: #000;
@@ -156,6 +161,7 @@ body {
 .statistics .element .row .card {
     text-align: center;
     padding: 10px 60px;
+    width: 250px;
 }
 .statistics .element .row h1 {
     font-size: 45px;
@@ -169,24 +175,26 @@ body {
     width: 100%;
     padding: 100px 0px;
 }
-.service .header {
+.header {
     text-align: center;
-    margin-bottom: 50px;
-    
+    width: 70%;
+    margin: 0px auto;
+    margin-bottom: 50px;    
 }
-.service h1 {
+.header h1 {
     text-transform: capitalize;
-    font-size: 40px;
+    /* font-size: 40px; */
+    font-size: clamp(1.5rem, 5vw, 3rem);
     margin: 10px 0px;
 }
-.service .header span {
+.header span {
     color: #8C6124;
     background-color: #F9EDDA;
     padding: 5px 15px;
     border-radius: 20px;
     text-transform: capitalize;
 }
-.service .header p {
+.header p {
     font-size: 20px;
     color: #4b5563;
 }
@@ -194,10 +202,20 @@ body {
     border: 1px solid #6b728051;
     padding: 30px;
     margin-bottom: 20px;
+    box-sizing: content-box;
+    /* box-sizing: border-box; */
     border-radius: 20px;
     width: 80%;
     transition: .2s ease-in;
+    /* height: 250px; */
+    /* overflow: hidden; */
 }
+/* .service .element .va {
+    height: 500px;
+    background: #4b5563;
+    width: 300px;
+    grid-row: span 2;
+} */
 .service .card #icon {
     padding: 15px;
     color: #A87a2a;
@@ -233,4 +251,269 @@ body {
 .service .element {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 3fr));
+    /* grid-template-columns: 3fr 3fr 3fr; */
+    gap: 20px;
+}
+.project {
+    width: 100%;
+    background-color: #F9fafb;
+    padding: 100px 0px;
+}
+.project .element {
+    display: grid;
+    /* grid-template-columns: repeat(3, 2fr); */
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 3fr));
+}
+.project .element .card {
+    box-sizing: border-box;
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    position: relative;
+    /* background-color: #8C6124; */
+    transition: .2s ease-in;
+    overflow: hidden;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+.project .element .card3 {
+    height: 600px;
+    border-radius: 20px 20px 0px 0px;
+    grid-row: span 2;
+}
+.project .element .card img {
+    width: inherit;
+    height: inherit;
+    border-radius: 20px;
+    transition: .2s ease-in;
+}
+.project .element .card3 img {
+    border-radius: 20px 20px 0px 0px;
+}
+/* .project .element .card .overlay {
+    position: absolute;
+    width: inherit;
+    height: 0px;
+    background-color: #000;
+    top: 0;
+    transform-origin: bottom;
+    opacity: 0.5;
+    border-radius: 20px;
+    display: none;
+    transition: .2s ease-in;    
+} */
+ .project .element .card .overlay {
+    position: absolute;
+    width: inherit;
+    height: 0px;
+    background-color: #000;
+    display: block;
+    top: 0;
+    transform-origin: top;
+    opacity: 0.5;
+    transition: .2s ease-in;
+ }
+.project .element .card .title {
+    margin-top: -100px;
+    padding: 20px;
+    transition: 0.6s ease-in;
+    position: absolute;
+    display: none;
+}
+.project .element .card .title p {
+    color:#A87a2a ;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+.project .element .card .title h2 {
+    color: #FFF;
+    text-transform: capitalize;
+    /* font-size: 20px; */
+}
+.project .element .card:hover img {
+    transform: scale(1.1);
+}
+.project .element .card:hover .overlay {
+    display: block;
+    height: 100%;
+    transform-origin: top;
+}
+.project .element .card:hover .title {
+    display: block;
+}
+.project .but {
+    text-align: center;
+    margin-top: 50px;
+}
+.work {
+    padding: 100px 0px;
+}
+.work .element {
+    justify-content: center;
+    padding: 0px 30px;
+}
+.work .element .card {
+    width: 800px;
+    position: relative;
+    display: flex;
+    margin: auto;
+}
+.work .rev {
+    flex-direction: row-reverse;
+}
+.work .element .card .num {
+    width: 100%;
+    /* background-color: #4b5563; */
+    text-align: center;
+    position: relative;
+    border-right: 1px solid #A87a2a;
+}
+.work .element .rev .num {
+    border-right: none;
+    border-left: 1px solid #A87a2a;
+}
+
+.work .element .card .num .b {
+    background-color: #A87a2a;
+    padding: 15px 17px;
+    border-radius: 50%;
+    border: 3px solid #FFF;
+    box-shadow: 1px 1px 1px #00000090;
+    color: #FFF;
+    position: absolute;
+    margin-left: 50%;
+}
+.work .element .card .title {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    text-align: right;
+}
+.work .element .rev .title {
+    text-align: left;
+}
+.work .element .card .title h1 {
+    font-weight: 500;
+    font-size: 25px;
+    text-transform: capitalize;
+}
+.fd {
+    padding: 100px 0px;
+    background-color: #F9fafb;
+    overflow: hidden;
+}
+.fd .element {
+    display: flex;
+    gap: 20px;
+}
+.fd .element .card {
+    box-sizing: border-box;
+    width: 500px;
+    min-width: 450px;
+    background-color: #FFF;
+    border-radius: 20px;
+    padding: 30px;
+    color: #111827;
+    border: 0.5px solid #11182746;
+}
+.fd .element .card .icon {
+    margin-bottom: 20px;
+}
+.fd .element .card .icon i {
+    color: #A87a2a;
+}
+.fd .element .card .profile h3 {
+    border-top: 0.2px solid #11182745;
+    margin-top: 30px;
+    padding-top: 30px;
+    text-transform: capitalize;
+}
+.fd .element .card span {
+    text-transform: capitalize;
+}
+table, tr, td, th {
+    border: 1px solid #000;
+    padding: 5px 10px;
+    border-collapse: collapse;
+}
+th,td {
+    text-transform: capitalize;
+    border-collapse: collapse;
+}
+
+
+
+
+
+
+
+
+/* tablet view */
+@media screen and (max-width:1000px) {
+    .container {
+        margin: 0px 40px;
+    }
+    .top .element .nav ul {
+        display: none;
+    }
+    .top .element .but {
+        display: flex;
+    }
+    .top .element .but #toggle{
+        display: block;
+    }
+    .header {
+        width: 100%;
+    }
+    
+    .statistics .element .row .card h1 {
+        font-size: 30px;
+    }
+    .work .element .card {
+        width: 100%;
+    }
+    .work .element .rev{
+        display: flex;
+        flex-direction: row;
+    }
+    .work .element .card .num {
+        width: 20%;
+        border: none;
+        margin-right: 20px;
+    }
+    .work .element .card .num .b {
+        margin-left: 0px;
+    }
+    .work .element .card .title {
+        text-align: left;
+    }
+    
+    
+    
+
+
+}
+
+
+
+
+
+
+
+/* mobile view  */
+@media only screen and (max-width:600px) {
+    .container {
+        margin: 0px 5%;
+    }
+    .top .but a{
+        display: none;
+    }
+    .bg .text {
+        width: 80%;
+    }
+
+
+
 }
