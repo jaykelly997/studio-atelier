@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/logo-light.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
-<body>
+<body onload="prel()">
+    <div id="preload"></div>
+    <div class="totop">
+        <a href="#"><i class="fa fa-angle-up"></i></a>
+    </div>
     <div class="top">
         <div class="container">
             <div class="element">
@@ -19,15 +24,15 @@
                 <div class="nav">
                     <ul>
                         <li><a href="">about</a></li>
-                        <li><a href="">portfolio</a></li>
-                        <li><a href="">services</a></li>
-                        <li><a href="">pricing</a></li>
-                        <li><a href="">blog</a></li>
-                        <li><a href="">contact</a></li>
+                        <li><a href="portfolio.html">portfolio</a></li>
+                        <li><a href="services.html" target="_blank">services</a></li>
+                        <li><a href="prices.html" target="_blank">pricing</a></li>
+                        <li><a href="blog.html" target="_blank">blog</a></li>
+                        <li><a href="contact.html" target="_blank">contact</a></li>
                     </ul>
                 </div>
                 <div class="but">
-                    <i class="fa-regular fa-moon" "></i>
+                    <i id="contrast" class="fa-regular fa-moon" "></i>
                     <a href="">book consultation</a>
                     <i id="toggle" class="fa fa-bars"></i>
                 </div>
@@ -45,7 +50,7 @@
                         <button id="active">residential <span>(18)</span></button>
                         <button>commercial <span>(12)</span></button>
                     </div>
-                    <div class="row">
+                    <div class="row" id="">
                         <button>hospitality <span>(10)</span></button>
                     <button>retail <span>(8)</span></button>
                     </div>
@@ -126,7 +131,7 @@
             </div>
         </div>
     </div>
-    <div class="project">
+    <div class="project" id="project">
         <div class="container">
             <div class="header">
                 <span>our work</span>
@@ -350,6 +355,12 @@
         </select>
         <input type="password" name="" id="">
     </form>
+
+    <script>
     
+
+        
+    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
